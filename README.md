@@ -187,3 +187,80 @@ Website: [nafizsadik.me](https://nafizsadik.me)
 ## License
 
 This project is available under the [MIT License](LICENSE). Copyright © 2026 Nafiz Sadik.
+
+## New to coding? Run StudyFlow step by step
+
+You do not need to know how to code to try this project. Think of StudyFlow as a small website stored in a folder on your computer. Download the folder, unpack it, and open its main page in a browser.
+
+**You only need a computer and a web browser.** You do not need to install Git, Node.js, Python, or a code editor for this first method. The earlier setup sections also include Git and local-server instructions for people who prefer those options.
+
+### Step 1: Download the whole project
+
+1. Open [the StudyFlow GitHub page](https://github.com/nnafizsadik/studyflow).
+2. Near the top of the file list, click the green **Code** button.
+3. Click **Download ZIP**. A file called `studyflow-main.zip` will usually appear in your computer’s **Downloads** folder.
+
+If you cannot find the button, use [this direct ZIP download](https://github.com/nnafizsadik/studyflow/archive/refs/heads/main.zip).
+
+Download the whole ZIP rather than saving only the README or copying the page text. The website needs its HTML, CSS, and JavaScript files together.
+
+### Step 2: Unpack the ZIP
+
+A ZIP is a package containing the project files. Unpacking it creates a normal folder you can use.
+
+- **Windows:** Open Downloads, right-click `studyflow-main.zip`, choose **Extract All**, and then click **Extract**. Open the folder Windows creates.
+- **macOS:** Open Downloads and double-click `studyflow-main.zip`. Open the `studyflow-main` folder that appears.
+- **Linux:** Right-click the ZIP and choose your file manager’s extraction option, then open the extracted folder.
+
+Open the extracted folder rather than browsing the files inside the ZIP itself. You may need to open one more folder with the same name before reaching the website files.
+
+### Step 3: Find the website’s starting page
+
+Look for these three files in the same folder:
+
+| File | What it does |
+| --- | --- |
+| `index.html` | Opens the website. This is the file you will double-click. |
+| `styles.css` | Gives the website its colors, spacing, and layout. |
+| `app.js` | Makes the buttons, tasks, calendar, and timer work. |
+
+Keep these files together. You do not need to open or edit `styles.css` or `app.js` to use the website.
+
+Some computers hide file extensions. In that case, `index.html` may appear as **index**, with a browser icon or a file type such as **HTML Document**.
+
+### Step 4: Open StudyFlow
+
+Double-click **index.html**. It should open in your default web browser.
+
+If it opens in a text editor instead, close that window, right-click the file, choose **Open with**, and select your web browser, such as Chrome, Edge, Firefox, or Safari.
+
+**That is enough to run the website.** For this method, you do not need to type any commands or upload anything to a server. The planner itself can run offline after you have downloaded and extracted its files.
+
+### Step 5: Check that it is working
+
+You should see the StudyFlow dashboard with the default profile name **Nafiz Sadik**, summary cards, and sample tasks.
+
+Try this small practice task:
+
+1. Click **New task**.
+2. Enter a title such as **My first study task**.
+3. Choose a subject and a due date.
+4. Click **Create task**.
+5. Open **My tasks** to find it. Click the checkbox beside it when you want to mark it complete.
+
+If the task appears and its checkbox works, you have successfully run the project on your computer.
+
+### Step 6: Make it yours and keep a backup
+
+Open **Settings**, enter your own name and preferences, and click **Save preferences**. You can keep exploring the sample tasks or use **Clear workspace** when you are ready to start with your own work. Clearing the workspace removes its current tasks and sessions, so export anything you want to keep first.
+
+Your changes are saved in your browser, rather than written into the downloaded code files. To keep a separate copy, choose **Settings → Export backup** and save the downloaded JSON file. Later, **Settings → Import** lets you restore it.
+
+### If something does not look right
+
+- **Only text appears, or the buttons do nothing:** Make sure you extracted the ZIP and that `index.html`, `styles.css`, and `app.js` are still together. Reopen the extracted `index.html` file.
+- **You cannot find the download:** Check your browser’s downloads list and your computer’s Downloads folder.
+- **Your new task disappears after reopening the page:** Your browser may restrict storage for directly opened files. Follow [the optional local-server instructions](#3-optional-run-through-a-local-server) above, or ask someone comfortable with those steps to help. Export a backup before switching methods.
+- **You see a storage warning:** Export a backup before closing the page so you can keep your work.
+
+Once you are comfortable opening the app, the earlier sections explain how to clone it with Git, run it through a local server, and customize the code. You can start with the simple method and explore those options whenever you are ready.
