@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142c25">
+  <meta name="description" content="A little structure. A lot more possibility. StudyFlow brings your tasks, study sessions and academic progress into one calm workspace.">
+  <title>StudyFlow · Your space to make progress</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="StudyFlow home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>studyflow<span class="brand-dot">.</span></a>
+      <div class="workspace"><span class="workspace-avatar">N</span><div><strong>My workspace</strong><small>Student space</small></div><span class="workspace-tag">FREE</span></div>
+      <p class="nav-label">WORKSPACE</p>
+      <nav id="navigation"></nav>
+      <div class="sidebar-bottom"><div class="quiet-card"><span class="quiet-icon" aria-hidden="true">✦</span><h3>Small steps.<br>Big possibilities.</h3><p>A little progress every day adds up.</p><button class="quiet-button" data-action="navigate" data-view="planner">Plan your next session <span aria-hidden="true">+</span></button></div><button class="nav-link" data-action="navigate" data-view="settings" id="settings-nav"></button><div class="local-status"><span></span> Saved on this device</div></div>
+    </aside>
+    <div class="sidebar-shade" data-action="close-menu"></div>
+    <div class="main-shell">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" data-action="menu" aria-label="Open navigation" aria-expanded="false" id="menu-button"></button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumb">Overview</strong></div>
+        <div class="topbar-actions"><label class="global-search"><span id="search-icon"></span><input type="search" id="global-search" placeholder="Search your tasks…" aria-label="Search all tasks"><kbd>/</kbd></label><div class="notification-wrap"><button class="icon-button notification-button" id="notification-button" data-action="notifications" aria-label="Deadline reminders" aria-expanded="false"></button><section class="notification-panel" id="notifications" hidden aria-label="Deadline reminders"></section></div><button class="profile-button" data-action="navigate" data-view="settings" aria-label="Open profile settings"><span class="avatar" id="profile-avatar">NS</span><span class="profile-name" id="profile-name">Nafiz Sadik</span><span id="profile-chevron"></span></button></div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="app-footer"><span class="footer-credit">Designed &amp; developed by <a href="https://nafizsadik.me" target="_blank" rel="noopener">Nafiz Sadik</a></span><span>Made for your next chapter <span class="footer-spark">✦</span></span></footer>
+    </div>
+  </div>
+  <dialog id="editor-dialog" aria-labelledby="editor-title"><form id="editor-form"><div class="dialog-header"><div><p class="eyebrow" id="editor-eyebrow">MAKE A LITTLE PROGRESS</p><h2 id="editor-title">Create a task</h2></div><button class="icon-button" type="button" data-action="close-editor" aria-label="Close dialog">×</button></div><input type="hidden" name="recordId"><input type="hidden" name="recordType"><label>Title<input name="title" required maxlength="120" placeholder="What would you like to work on?"></label><div class="form-grid"><label>Subject<select name="subject"><option>Computer Science</option><option>Mathematics</option><option>Design</option><option>Physics</option><option>Literature</option><option>General</option></select></label><label id="kind-field">Type<select name="kind"><option value="task">Task</option><option value="assignment">Assignment</option></select></label><label>Due date<input name="date" type="date" required></label><label id="priority-field">Priority<select name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></label><label id="time-field" hidden>Start time<input name="time" type="time"></label><label id="duration-field" hidden>Duration (minutes)<input name="duration" type="number" min="5" max="480" step="5" value="60"></label></div><label>Notes <span class="optional">(optional)</span><textarea name="notes" rows="3" maxlength="1000" placeholder="A few details, links, or a place to start…"></textarea></label><p class="form-error" id="editor-error" role="alert"></p><div class="dialog-footer"><button type="button" class="button secondary" data-action="close-editor">Cancel</button><button class="button primary" type="submit" id="editor-submit">Create task</button></div></form></dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-header"><h2 id="confirm-title">Delete this item?</h2><button class="icon-button" data-action="cancel-confirm" aria-label="Close dialog">×</button></div><p id="confirm-description">This will remove the item from your workspace.</p><div class="dialog-footer"><button class="button secondary" data-action="cancel-confirm">Cancel</button><button class="button danger" id="confirm-button">Delete</button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="import-input" accept="application/json,.json" hidden>
+</body>
+</html>
