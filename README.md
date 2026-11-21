@@ -45,6 +45,7 @@ There are no frameworks, third-party JavaScript libraries, package installations
 - **Preferences:** edit the profile name and course, select light or dark appearance, adjust timer durations, and enable compact task spacing.
 - **Deadline reminders:** see overdue tasks and deadlines within the next two days inside the app.
 - **Backup and restore:** export workspace data as JSON and restore a validated StudyFlow backup.
+- **Data recovery:** if saved data cannot be read, download its original contents from Settings. The app preserves that copy before saving a replacement workspace.
 - **Fresh start:** clear workspace records from Settings while keeping profile preferences.
 - **Responsive and accessible interface:** mobile navigation, keyboard shortcuts, labeled controls, keyboard focus indicators, reduced-motion support, and dialogs.
 
@@ -58,6 +59,8 @@ studyflow/
 ├── styles.css     # Complete visual design and responsive styles
 ├── app.js         # All app logic and browser storage
 ├── README.md      # This guide
+├── test/
+│   └── app.test.js # Automated regression checks (optional for contributors)
 └── LICENSE        # MIT license
 ```
 
@@ -131,6 +134,7 @@ If the Python command is unavailable, use the direct-open method or an existing 
 ## Data storage and backups
 
 - Workspace data is stored in this browser on this device under `studyflow.workspace.v1`.
+- If that saved workspace is unreadable, its original contents are preserved under `studyflow.workspace.v1.recovery` before replacement. Settings offers **Download original data**; this recovery file may need correction before it can be imported.
 - Tasks, sessions, preferences, focus history, and timer state are saved locally. There is no cloud synchronization or remote application database.
 - The profile is a local workspace profile, not an online login account.
 - Clearing site data, changing browsers, using another device, or changing the local site address can make your saved workspace unavailable.
@@ -177,6 +181,18 @@ The initial implementation passed **21 automated logic checks** covering backup 
 Browser checks covered task creation, editing, completion, deletion, search and filters, reload persistence, assignment listing, calendar navigation, session planning and completion, overlap rejection, timer pause/reload/reset, analytics periods, appearance settings, reminders, and backup export/restore.
 
 Responsive layouts were checked at **320 px, 390 px, 768 px, and 1440 px** widths. These checks describe the implementation review, not a guarantee for every browser or device.
+
+## Running the regression checks
+
+For contributors with Node.js installed, open a terminal in the repository folder and run:
+
+```bash
+node --test test/app.test.js
+```
+
+No packages or dependencies need to be installed. All **34 regression checks** pass, covering timer completion at button-click boundaries, settings preservation, invalid backup rejection, unreadable-data recovery, deleted-item protection, session scheduling, and deadline refresh across date changes.
+
+These checks run app logic in an isolated browser substitute. They complement the separate browser checks for mobile deadline visibility, keyboard focus, cross-tab interactions, and unsaved profile changes. Node.js is only needed to run these contributor checks; opening the website still requires only a browser.
 
 ## Credits
 
